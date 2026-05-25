@@ -1,0 +1,83 @@
+/* Minimal Go-Forth-style template stylesheet for the website builder preview & deploys.
+   Self-contained — no external dependencies. */
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#232534;line-height:1.55;background:#fff}
+img{max-width:100%;display:block}
+a{color:#CC3840;text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+
+/* Utility bar */
+.utility-bar{background:#232534;color:#fff;font-size:.85rem;padding:.55rem 0}
+.utility-bar .container{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.utility-bar .pill{display:inline-block;background:#CC3840;color:#fff;padding:.18rem .55rem;border-radius:999px;font-weight:700;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase}
+.utility-bar a{color:#fff;margin-left:1rem}
+.utility-bar a:hover{color:#fff;text-decoration:underline}
+
+/* Header */
+.site-header{background:#fff;border-bottom:4px solid #232534;padding:1rem 0;position:sticky;top:0;z-index:10}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.site-header .logo img{height:48px}
+.primary-nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+.primary-nav a{color:#232534;font-weight:600;font-size:.95rem}
+.header-cta{display:flex;align-items:center;gap:1rem}
+.header-phone{color:#CC3840;font-weight:800;font-size:1.05rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:6px;font-weight:700;font-size:.95rem;letter-spacing:.02em;border:2px solid transparent;cursor:pointer;transition:all .15s}
+.btn-primary,.btn-red{background:#CC3840;color:#fff;border-color:#CC3840}
+.btn-primary:hover,.btn-red:hover{background:#A02B30;border-color:#A02B30;text-decoration:none;color:#fff}
+.btn-outline{background:transparent;color:#232534;border-color:#232534}
+.btn-outline:hover{background:#232534;color:#fff;text-decoration:none}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,#F4F4F4 0%,#fff 100%);padding:3.5rem 0 3rem}
+.hero .container{display:grid;grid-template-columns:1.2fr 1fr;gap:2.25rem;align-items:start}
+.hero .eyebrow{display:inline-block;background:#fff;color:#CC3840;padding:.3rem .8rem;border-radius:999px;font-weight:700;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1rem}
+.hero h1{font-size:3rem;line-height:1.1;font-weight:900;margin:0 0 1rem;color:#232534}
+.hero h1 .accent{color:#CC3840}
+.hero .lede{font-size:1.1rem;color:#444;max-width:560px;margin:0 0 1.5rem}
+.cta-row{display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.trust-row{display:flex;gap:1.25rem;flex-wrap:wrap;color:#666;font-size:.85rem}
+.hero-card{background:#fff;border-radius:10px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.08);border-top:4px solid #CC3840}
+
+/* Stat strip */
+.stat-strip{background:#232534;color:#fff;padding:1.75rem 0}
+.stat-strip .container{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.stat .num{font-size:2.25rem;font-weight:900;color:#fff;line-height:1}
+.stat .label{font-size:.85rem;color:#bbb;letter-spacing:.04em;text-transform:uppercase;margin-top:.35rem}
+
+/* Sections */
+.section{padding:3.5rem 0}
+.section-header{text-align:center;max-width:720px;margin:0 auto 2rem}
+.section-header .kicker{display:inline-block;color:#CC3840;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.section-header h2{font-size:2.1rem;font-weight:800;margin:0 0 .75rem;color:#232534}
+.section-header p{color:#555}
+
+/* Services grid */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.service-card{background:#fff;border:1px solid #eee;border-radius:8px;padding:1.4rem;transition:box-shadow .15s,transform .15s}
+.service-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);transform:translateY(-2px)}
+.service-card h3{margin:0 0 .5rem;color:#232534;font-size:1.15rem}
+.service-card p{margin:0;color:#555;font-size:.95rem}
+
+/* Locations grid */
+.locations-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.location-card{background:#fff;border:1px solid #eee;border-left:4px solid #CC3840;border-radius:6px;padding:1rem 1.25rem;position:relative;transition:border-color .15s}
+.location-card:hover{border-left-color:#0F4068}
+.location-card h4{margin:0 0 .25rem;color:#232534;font-size:1rem}
+.location-card p{margin:0;font-size:.9rem;color:#555}
+
+/* Breadcrumb */
+.breadcrumb a:hover{text-decoration:underline}
+
+/* Footer */
+.site-footer{font-size:.95rem}
+.site-footer a{color:#fff}
+
+/* Responsive */
+@media (max-width: 880px){
+  .hero .container{grid-template-columns:1fr}
+  .hero h1{font-size:2.25rem}
+  .stat-strip .container{grid-template-columns:repeat(2,1fr)}
+  .primary-nav{display:none}
+}
