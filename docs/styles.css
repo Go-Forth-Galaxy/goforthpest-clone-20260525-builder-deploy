@@ -44,7 +44,7 @@ a:hover{text-decoration:underline}
 /* Header */
 .site-header{background:#fff;border-bottom:4px solid var(--gf-dark);padding:1rem 0;position:sticky;top:0;z-index:10}
 .site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.site-header .logo img{height:48px}
+.site-header .logo img{height:56px;width:auto;display:block}
 .primary-nav{display:flex;gap:1.25rem;flex-wrap:wrap}
 .primary-nav a{color:var(--gf-dark);font-weight:600;font-size:.95rem}
 .header-cta{display:flex;align-items:center;gap:1rem}
@@ -107,3 +107,14 @@ a:hover{text-decoration:underline}
   .stat-strip .container{grid-template-columns:repeat(2,1fr)}
   .primary-nav{display:none}
 }
+
+/* Section background images: when a section is wrapped in .section-bg
+   (i.e. data.background_image is set), the inner section element's own
+   background must yield so the wrapper's image is visible. !important is
+   required to beat inline style="background:..." on .locations-grid /
+   .cta-band etc. We only strip background-color and background-image —
+   gradients/overlays the user wants come from the wrapper or the overlay
+   div, and individual nested elements (cards, eyebrows, buttons) keep
+   their own backgrounds because the rule is scoped to direct children
+   of .section-bg-content. */
+.section-bg>.section-bg-content>*{background-color:transparent !important;background-image:none !important}
